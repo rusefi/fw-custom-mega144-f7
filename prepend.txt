@@ -16,3 +16,5 @@
 
 #define VE_RPM_COUNT 32
 #define VE_LOAD_COUNT 32
+
+#define FUEL_RPM_COUNT 24
