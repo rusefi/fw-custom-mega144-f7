@@ -59,7 +59,7 @@
 #define adc_channel_e_EFI_ADC_NONE 0
 #define adc_channel_e_EFI_ADC_TOTAL_CHANNELS 49
 #define adc_channel_e_enum 0="NONE",1="A0",2="A1",11="A10",12="A11",13="A12",14="A13",15="A14",16="A15",3="A2",4="A3",5="A4",6="A5",7="A6",8="A7",9="A8",10="A9"
-#define adc_channel_e_fullenum "NONE","A0","A1","A2","A3","A4","A5","A6","A7","A8","A9","A10","A11","A12","A13","A14","A15"
+#define adc_channel_e_fullenum "NONE","A0","A1","A2","A3","A4","A5","A6","A7","A8","A9","A10","A11","A12","A13","A14","A15","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID"
 #define ADC_CHANNEL_NONE 0
 #define afr_sensor_s_size 20
 #define air_pressure_sensor_config_s_size 12
@@ -623,7 +623,7 @@
 #define FIELD_DISPLACEMENT displacement
 #define FIELD_INJECTOR_FLOW injector.flow
 #define firing_order_e_enum "One Cylinder", "1-3-4-2", "1-2-4-3", "1-3-2-4", "1-5-3-6-2-4", "1-8-4-3-6-5-7-2", "1-2-4-5-3", "1-4-2-5-3-6", "1-2", "1-2-3-4-5-6", "1-2-3", "1-8-7-2-6-5-4-3", "1-5-4-2-6-3-7-8 Mustang", "1-6-3-2-5-4", "1-10-9-4-3-6-5-8-7_2", "1-7-5-11-3-9-6-12-2-8-4-10", "1-7-4-10-2-8-6-12-3-9-5-11", "1-4-3-2", "1-12-5-8-3-10-6-7-2-11-4-9", "1-2-7-8-4-5-6-3", "1-3-7-2-6-5-4-8 HO", "1-2-3-4-5-6-7-8-9", "INVALID", "1-2-3-4-5-6-7-8-9-10-11-12", "1-3-2", "1-2-3-4-5-6-7-8", "1-5-4-8-6-3-7-2", "1-4-3-6-2-5", "1-8-7-3-6-5-4-2", "1-6-2-4-3-5", "1-6-5-4-3-2", "1-4-5-2-3-6", "1-5-4-8-3-7-2-6 Voodoo", "1-6-5-10-2-7-3-8-4-9", "1-8-6-2-7-3-4-5 F136", "fo35", "fo36", "fo37"
-#define FLASH_DATA_VERSION 251221
+#define FLASH_DATA_VERSION 260102
 #define FLOW_LINEARIZATION_MASS_SIZE 2
 #define FLOW_LINEARIZATION_PRESSURE_SIZE 2
 #define FRONTEND_TITLE_BAR_NAME "rusEFI"
@@ -1439,7 +1439,7 @@
 #define operation_mode_e_OM_NONE 0
 #define operation_mode_e_TWO_STROKE 3
 #define output_pin_e_enum 0="NONE",12="D0",11="D1",42="D10",43="D11",10="D12",17="D13",28="D14",29="D15",55="D16",56="D17",54="D18",53="D19",33="D2",79="D20",78="D21",77="D22",76="D23",81="D24",75="D25",74="D26",73="D27",20="D28",65="D29",64="D30",31="D31",62="D32",63="D33",30="D34",57="D35",112="D36",80="D37",113="D38",22="D39",58="D4",21="D40",23="D41",25="D42",24="D43",27="D44",26="D45",66="D46",67="D47",68="D48",69="D49",59="D5",70="D50",71="D51",72="D52",47="D53",60="D6",61="D7",40="D8",41="D9"
-#define output_pin_e_fullenum "NONE","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","D12","D1","D0","INVALID","INVALID","INVALID","INVALID","D13","INVALID","INVALID","D28","D40","D39","D41","D43","D42","D45","D44","D14","D15","D34","D31","INVALID","D2","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","D8","D9","D10","D11","INVALID","INVALID","INVALID","D53","INVALID","INVALID","INVALID","INVALID","INVALID","D19","D18","D16","D17","D35","D4","D5","D6","D7","D32","D33","D30","D29","D46","D47","D48","D49","D50","D51","D52","D27","D26","D25","D23","D22","D21","D20","D37","D24","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","D36","D38"
+#define output_pin_e_fullenum "NONE","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","D12","D1","D0","INVALID","INVALID","INVALID","INVALID","D13","INVALID","INVALID","D28","D40","D39","D41","D43","D42","D45","D44","D14","D15","D34","D31","INVALID","D2","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","D8","D9","D10","D11","INVALID","INVALID","INVALID","D53","INVALID","INVALID","INVALID","INVALID","INVALID","D19","D18","D16","D17","D35","D4","D5","D6","D7","D32","D33","D30","D29","D46","D47","D48","D49","D50","D51","D52","D27","D26","D25","D23","D22","D21","D20","D37","D24","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","D36","D38","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID","INVALID"
 #define PACK_ADD_TEMPERATURE 40
 #define PACK_MULT_AFR 1000
 #define PACK_MULT_AFR_CFG 10
@@ -1546,7 +1546,7 @@
 #define SentInput_NONE 0
 #define show_tcu_gauges true
 #define show_vvt_output_pin true
-#define SIGNATURE_HASH 3280411656
+#define SIGNATURE_HASH 3980829663
 #define SIMULATOR_TUNE_BIN_FILE_NAME "generated/simulator_tune_image.bin"
 #define SIMULATOR_TUNE_BIN_FILE_NAME_PREFIX "generated/simulator_tune_image"
 #define SIMULATOR_TUNE_BIN_FILE_NAME_SUFFIX ".bin"
@@ -2138,7 +2138,7 @@
 #define ts_show_wastegate_sensor true
 #define ts_show_wbo_canbus_index true
 #define ts_show_wbo_canbus_set_index true
-#define TS_SIGNATURE "rusEFI main.2025.12.28.mega144-f7.3280411656"
+#define TS_SIGNATURE "rusEFI main.2026.01.04.mega144-f7.3980829663"
 #define TS_SIMULATE_CAN '>'
 #define TS_SIMULATE_CAN_char >
 #define TS_TEST_COMMAND 't'
