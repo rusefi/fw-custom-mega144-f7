@@ -7245,220 +7245,268 @@ struct persistent_config_s {
 	 */
 	float iatBoostAdder[BOOST_CURVE_SIZE] = {};
 	/**
-	 * units: RPM
+	 * "Minimum Battery Voltage"
+	 * units: #
 	 * offset 24992
+	 */
+	scaled_channel<uint8_t, 10, 1> cel_battery_min_v;
+	/**
+	 * "Maximum Battery Voltage"
+	 * units: #
+	 * offset 24993
+	 */
+	scaled_channel<uint8_t, 10, 1> cel_battery_max_v;
+	/**
+	 * "Minimum MAP V"
+	 * units: V
+	 * offset 24994
+	 */
+	scaled_channel<uint8_t, 50, 1> cel_map_min_v;
+	/**
+	 * "Maximum MAP V"
+	 * units: V
+	 * offset 24995
+	 */
+	scaled_channel<uint8_t, 50, 1> cel_map_max_v;
+	/**
+	 * "Minimum IAT V"
+	 * units: V
+	 * offset 24996
+	 */
+	scaled_channel<uint8_t, 50, 1> cel_iat_min_v;
+	/**
+	 * "Maximum IAT V"
+	 * units: V
+	 * offset 24997
+	 */
+	scaled_channel<uint8_t, 50, 1> cel_iat_max_v;
+	/**
+	 * "Minimum TPS V"
+	 * units: V
+	 * offset 24998
+	 */
+	scaled_channel<uint8_t, 50, 1> cel_tps_min_v;
+	/**
+	 * "Maximum TPS V"
+	 * units: V
+	 * offset 24999
+	 */
+	scaled_channel<uint8_t, 50, 1> cel_tps_max_v;
+	/**
+	 * units: RPM
+	 * offset 25000
 	 */
 	scaled_channel<uint8_t, 1, 100> minimumOilPressureBins[8] = {};
 	/**
 	 * units: {bitStringValue(pressureUnitsLabels, useMetricOnInterface)}
-	 * offset 25000
+	 * offset 25008
 	 */
 	scaled_channel<uint8_t, 1, 10> minimumOilPressureValues[8] = {};
 	/**
-	 * offset 25008
+	 * offset 25016
 	 */
 	blend_table_s targetAfrBlends[TARGET_AFR_BLEND_COUNT] = {};
 	/**
 	 * @@DYNO_RPM_STEP_TOOLTIP@@
 	 * units: Rpm
-	 * offset 25384
+	 * offset 25392
 	 */
 	scaled_channel<uint8_t, 1, 1> dynoRpmStep;
 	/**
 	 * @@DYNO_SAE_TEMPERATURE_C_TOOLTIP@@
 	 * units: C
-	 * offset 25385
+	 * offset 25393
 	 */
 	scaled_channel<int8_t, 1, 1> dynoSaeTemperatureC;
 	/**
 	 * @@DYNO_SAE_RELATIVE_HUMIDITY_TOOLTIP@@
 	 * units: %
-	 * offset 25386
+	 * offset 25394
 	 */
 	scaled_channel<uint8_t, 1, 1> dynoSaeRelativeHumidity;
 	/**
 	 * need 4 byte alignment
 	 * units: units
-	 * offset 25387
+	 * offset 25395
 	 */
-	uint8_t alignmentFill_at_25387[1] = {};
+	uint8_t alignmentFill_at_25395[1] = {};
 	/**
 	 * @@DYNO_SAE_BARO_TOOLTIP@@
 	 * units: KPa
-	 * offset 25388
+	 * offset 25396
 	 */
 	scaled_channel<float, 1, 1> dynoSaeBaro;
 	/**
 	 * @@DYNO_CAR_WHEEL_DIA_INCH_TOOLTIP@@
 	 * units: Inch
-	 * offset 25392
+	 * offset 25400
 	 */
 	scaled_channel<int8_t, 1, 1> dynoCarWheelDiaInch;
 	/**
 	 * @@DYNO_CAR_WHEEL_ASPECT_RATIO_TOOLTIP@@
 	 * units: Aspect Ratio (height)
-	 * offset 25393
+	 * offset 25401
 	 */
 	scaled_channel<int8_t, 1, 1> dynoCarWheelAspectRatio;
 	/**
 	 * @@DYNO_CAR_WHEEL_TIRE_WIDTH_TOOLTIP@@
 	 * units: Width mm
-	 * offset 25394
+	 * offset 25402
 	 */
 	scaled_channel<int16_t, 1, 1> dynoCarWheelTireWidthMm;
 	/**
 	 * @@DYNO_CAR_GEAR_PRIMARY_REDUCTION_TOOLTIP@@
 	 * units: Units
-	 * offset 25396
+	 * offset 25404
 	 */
 	scaled_channel<float, 1, 1> dynoCarGearPrimaryReduction;
 	/**
 	 * @@DYNO_CAR_GEAR_RATIO_TOOLTIP@@
 	 * units: Units
-	 * offset 25400
+	 * offset 25408
 	 */
 	scaled_channel<float, 1, 1> dynoCarGearRatio;
 	/**
 	 * @@DYNO_CAR_GEAR_FINAL_DRIVE_TOOLTIP@@
 	 * units: Units
-	 * offset 25404
+	 * offset 25412
 	 */
 	scaled_channel<float, 1, 1> dynoCarGearFinalDrive;
 	/**
 	 * @@DYNO_CAR_CAR_MASS_TOOLTIP@@
 	 * units: Kg
-	 * offset 25408
+	 * offset 25416
 	 */
 	scaled_channel<int16_t, 1, 1> dynoCarCarMassKg;
 	/**
 	 * @@DYNO_CAR_CARGO_MASS_TOOLTIP@@
 	 * units: Kg
-	 * offset 25410
+	 * offset 25418
 	 */
 	scaled_channel<int16_t, 1, 1> dynoCarCargoMassKg;
 	/**
 	 * @@DYNO_CAR_COEFF_OF_DRAG_TOOLTIP@@
 	 * units: Coeff
-	 * offset 25412
+	 * offset 25420
 	 */
 	scaled_channel<float, 1, 1> dynoCarCoeffOfDrag;
 	/**
 	 * @@DYNO_CAR_FRONTAL_AREA_TOOLTIP@@
 	 * units: m2
-	 * offset 25416
+	 * offset 25424
 	 */
 	scaled_channel<float, 1, 1> dynoCarFrontalAreaM2;
 	/**
 	 * units: deg
-	 * offset 25420
+	 * offset 25428
 	 */
 	scaled_channel<int8_t, 10, 1> trailingSparkTable[TRAILING_SPARK_SIZE][TRAILING_SPARK_RPM_SIZE] = {};
 	/**
 	 * units: rpm
-	 * offset 25436
+	 * offset 25444
 	 */
 	scaled_channel<uint8_t, 1, 50> trailingSparkRpmBins[TRAILING_SPARK_RPM_SIZE] = {};
 	/**
 	 * units: Load
-	 * offset 25440
+	 * offset 25448
 	 */
 	scaled_channel<uint8_t, 1, 5> trailingSparkLoadBins[TRAILING_SPARK_SIZE] = {};
 	/**
 	 * units: RPM
-	 * offset 25444
+	 * offset 25452
 	 */
 	scaled_channel<uint8_t, 1, 100> maximumOilPressureBins[4] = {};
 	/**
 	 * units: {bitStringValue(pressureUnitsLabels, useMetricOnInterface)}
-	 * offset 25448
+	 * offset 25456
 	 */
 	scaled_channel<uint8_t, 1, 10> maximumOilPressureValues[4] = {};
 	/**
 	 * Selects the X axis to use for the table.
-	 * offset 25452
+	 * offset 25460
 	 */
 	gppwm_channel_e torqueReductionCutXaxis;
 	/**
 	 * How many % of ignition events will be cut
 	 * units: %
-	 * offset 25453
+	 * offset 25461
 	 */
 	int8_t torqueReductionIgnitionCutTable[TORQUE_TABLE_Y_SIZE][TORQUE_TABLE_X_SIZE] = {};
 	/**
 	 * need 4 byte alignment
 	 * units: units
-	 * offset 25465
+	 * offset 25473
 	 */
-	uint8_t alignmentFill_at_25465[1] = {};
+	uint8_t alignmentFill_at_25473[1] = {};
 	/**
-	 * offset 25466
+	 * offset 25474
 	 */
 	int16_t torqueReductionCutXBins[TORQUE_TABLE_X_SIZE] = {};
 	/**
 	 * units: gear N°
-	 * offset 25478
+	 * offset 25486
 	 */
 	int8_t torqueReductionCutGearBins[TORQUE_TABLE_Y_SIZE] = {};
 	/**
 	 * Selects the X axis to use for the table.
-	 * offset 25480
+	 * offset 25488
 	 */
 	gppwm_channel_e torqueReductionTimeXaxis;
 	/**
 	 * need 4 byte alignment
 	 * units: units
-	 * offset 25481
+	 * offset 25489
 	 */
-	uint8_t alignmentFill_at_25481[3] = {};
+	uint8_t alignmentFill_at_25489[3] = {};
 	/**
 	 * For how long after the pin has been triggered will the cut/reduction stay active. After that, even if the pin is still triggered, torque is re-introduced
 	 * units: ms
-	 * offset 25484
+	 * offset 25492
 	 */
 	float torqueReductionTimeTable[TORQUE_TABLE_Y_SIZE][TORQUE_TABLE_X_SIZE] = {};
 	/**
-	 * offset 25532
+	 * offset 25540
 	 */
 	int16_t torqueReductionTimeXBins[TORQUE_TABLE_X_SIZE] = {};
 	/**
 	 * units: gear N°
-	 * offset 25544
+	 * offset 25552
 	 */
 	int8_t torqueReductionTimeGearBins[TORQUE_TABLE_Y_SIZE] = {};
 	/**
 	 * Selects the X axis to use for the table.
-	 * offset 25546
+	 * offset 25554
 	 */
 	gppwm_channel_e torqueReductionIgnitionRetardXaxis;
 	/**
 	 * need 4 byte alignment
 	 * units: units
-	 * offset 25547
+	 * offset 25555
 	 */
-	uint8_t alignmentFill_at_25547[1] = {};
+	uint8_t alignmentFill_at_25555[1] = {};
 	/**
 	 * How many degrees of timing advance will be reduced during the Torque Reduction Time
 	 * units: deg
-	 * offset 25548
+	 * offset 25556
 	 */
 	float torqueReductionIgnitionRetardTable[TORQUE_TABLE_Y_SIZE][TORQUE_TABLE_X_SIZE] = {};
 	/**
-	 * offset 25596
+	 * offset 25604
 	 */
 	int16_t torqueReductionIgnitionRetardXBins[TORQUE_TABLE_X_SIZE] = {};
 	/**
 	 * units: gear N°
-	 * offset 25608
+	 * offset 25616
 	 */
 	int8_t torqueReductionIgnitionRetardGearBins[TORQUE_TABLE_Y_SIZE] = {};
 	/**
 	 * need 4 byte alignment
 	 * units: units
-	 * offset 25610
+	 * offset 25618
 	 */
-	uint8_t alignmentFill_at_25610[2] = {};
+	uint8_t alignmentFill_at_25618[2] = {};
 };
-static_assert(sizeof(persistent_config_s) == 25612);
+static_assert(sizeof(persistent_config_s) == 25620);
 
 // end
 // this section was generated automatically by rusEFI tool config_definition-all.jar based on (unknown script) integration/rusefi_config.txt
