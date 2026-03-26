@@ -35,6 +35,12 @@ jobs:
       - name: Show output structure
         run: find pinouts_raw -type f | sort
 
+      - name: Upload pinouts_raw as artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: pinouts_raw
+          path: pinouts_raw/
+
       - name: Upload pinouts_raw to server
         env:
           pass: ${{ secrets.RUSEFI_SSH_PASS }}
