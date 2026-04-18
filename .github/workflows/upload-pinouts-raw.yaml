@@ -31,7 +31,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
         with:
           submodules: true
 
@@ -54,7 +54,7 @@ jobs:
         run: find pinouts_raw -type f | sort
 
       - name: Upload pinouts_raw as artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v5
         with:
           name: pinouts_raw
           path: pinouts_raw/
