@@ -1,0 +1,19 @@
+name: Unit Tests
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  unit-tests:
+    uses: rusefi/rusefi/.github/workflows/custom-board-unit-tests.yaml@master
+    with:
+      rusefi_submodule_path: ext/rusefi
+      baseline_workflow_file: build-unit-tests.yaml
+      board_meta_path: meta-info.env
+      is_pull_request: ${{ github.event_name == 'pull_request' }}
+    permissions:
+      actions: read
+      contents: read
+      pull-requests: write
