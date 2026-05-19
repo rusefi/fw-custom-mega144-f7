@@ -12,7 +12,7 @@ jobs:
       rusefi_submodule_path: ext/rusefi
       baseline_workflow_file: build-unit-tests.yaml
       board_meta_path: meta-info.env
-      is_pull_request: ${{ github.event_name == 'pull_request' }}
+      is_pull_request: false
     permissions:
       actions: read
       contents: read
