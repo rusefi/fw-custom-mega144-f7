@@ -17,7 +17,7 @@ static void customBoardDefaultConfiguration() {
     engineConfiguration->analogInputDividerCoefficient = 1.47f;
 
 	engineConfiguration->adcVcc = 3.3f;
-	engineConfiguration->is_enabled_spi_3 = true;
+//	engineConfiguration->is_enabled_spi_3 = true;
 
 }
 
